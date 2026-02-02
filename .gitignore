@@ -82,7 +82,7 @@ yarn-error.log*
 .pnpm-debug.log*
 
 # ¹¹½¨Êä³ö
-interface/dist/
+#interface/dist/
 interface/dist-ssr/
 *.local
 
