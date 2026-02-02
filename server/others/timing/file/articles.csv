@@ -1,0 +1,12 @@
+id,title,description,last_up_date,cover_url,address
+1,にっき,kaedeのつまらない生活,2022-05-13,http://49.234.15.210/static/web/articles/1631491807857.jpg,life/diary
+2,博客部署问题,技术清单 环境配置 上线部署 难题解决,2022-04-28,http://49.234.15.210/static/web/articles/snapshot_2020-04-04-14-54-42.png,blog
+3,Vue,知识分享,2022-05-15,http://49.234.15.210/static/web/articles/snapshot_2020-04-04-16-28-24.png,skill/vue
+4,Django,Django使用知识点,2022-05-18,http://49.234.15.210/static/web/articles/-1b113a0b07eeb2ae.jpg,skill/django
+5,阅读,博主的阅读记录,2022-05-24,http://49.234.15.210/static/web/articles/cover.jpg,life/reading
+6,指令,一些常用命令,2022-05-26,http://49.234.15.210/static/web/articles/73f37b4a969c3724.jpg,skill/order
+7,博客部署流程,此博客项目部署完整流程,2022-06-06,http://49.234.15.210/static/web/articles/cover.jpg,skill/deploy
+8,python发送邮件,将mysql数据表存入csv通过邮件发送,2022-06-09,http://49.234.15.210/static/web/articles/cover.jpg,skill/mail
+9,python操作mysql,pandas读取csv内容插入mysql,2022-06-15,http://49.234.15.210/static/web/articles/mmexport1647402967404.jpg,skill/1
+10,html,常见html,2022-07-03,http://49.234.15.210/static/web/articles/mmexport1647402967404.jpg,skill/7
+11,css,css学习内容,2022-07-24,http://49.234.15.210/static/web/articles/mmexport1647402967404.jpg,skill/8

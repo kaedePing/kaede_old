@@ -1,0 +1,2 @@
+﻿id,flag,sing_title,singer,format_sing_title,format_singer,name,playLink,downloadUrl,originDownloadUrl,dateCreated,dateCreatedStr
+1,Y,谪仙,叶丽,谪仙,叶丽,叶里 - 谪仙.mp3,http://49.234.15.210/api/music/v1/play,http://49.234.15.210/api/music/v1/download,https://webfs.ali.kugou.com/202303091626/1e532534245c85ad8bee931a4cdaa28b/KGTX/CLTX001/49253cfdbedd2ccd6627b66fab1a7793.mp3,2023-03-09 16:26:28.947788,2023-03-09 16:26:28

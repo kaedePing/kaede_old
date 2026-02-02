@@ -1,0 +1,40 @@
+6.0以前
+1.配置环境变量
+2.在data文件下创建db文件，用来存放存储的文件
+3.启动命令  mongod --dbpath d:\mongodb\data\db
+4.做成服务:
+	1.在data文件下创建log文件夹
+	2.新建一个 mongo.config文件与bin同级，填入以下内容
+		dbpath=D:\mongodb\data\db
+		
+		logpath=D:\mongodb\data\log\mongo.log
+	3.以管理员运行如下命令
+		mongod --dbpath "d:\mongodb\data\db" -logpath "d:\mongodb\data\log\mongo.log" -install -serviceName "MongoDB"
+	4.进入数据库交互界面
+		在bin目录下:mongo
+6.0交互界面需要单独下载shell
+mongo "mongodb://http://localhost:27017"
+https://blog.csdn.net/liboshi123/article/details/125512799
+
+MongoDB操作:
+创建数据库
+use kaede
+删除数据库
+db.dropDatabase()
+
+创建表/集合
+db.createCollection('music')
+查看所有表
+show tables
+删除集合
+db.music.drop()
+
+插入文档
+db.music.insert({'title': 'MongoDB','likes': '100'})  insert_one  insert_many
+查找文档
+db.music.find()  db.music.find().pretty()
+删除文档
+db.music.remove({'title':'MongoDB'})
+修改文档
+db.music.update({'title':'MongoDB'},{$set:{'title':'MySQL'})
+

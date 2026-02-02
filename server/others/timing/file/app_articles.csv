@@ -1,0 +1,12 @@
+﻿id,title,description,last_up_date,cover_url,address
+1,にっき,kaedeのつまらない生活,2022-05-13,http://49.234.15.210/static/web/articles/anime-street-scenic-buildings-bicycle-cars-road-clouds-anime-6573-thumb.jpg,life/diary
+2,博客部署问题,技术清单 环境配置 上线部署 难题解决,2022-04-28,http://49.234.15.210/static/web/articles/anime-street-scenic-buildings-bicycle-cars-road-clouds-anime-6573-thumb.jpg,blog
+3,Vue,知识分享,2022-05-15,http://49.234.15.210/static/web/articles/anime-girl-kimono-katana-sakura-blossom-profile-view-traditional-building-anime-5694-thumb.jpg,skill/vue
+4,Django,Django使用知识点,2022-05-18,http://49.234.15.210/static/web/articles/your-name-kimi-no-na-wa-mitsuha-miyamizu-taki-tachibana-scenic-artwork-clouds-anime-8098-thumb.jpg,skill/django
+5,阅读,博主的阅读记录,2022-05-24,http://49.234.15.210/static/web/articles/anime-girl-kimono-katana-sakura-blossom-profile-view-traditional-building-anime-5694-thumb.jpg,life/reading
+6,指令,一些常用命令,2022-05-26,http://49.234.15.210/static/web/articles/anime-landscape-scenery-clouds-stars-buildings-anime-36270-thumb.jpeg,skill/order
+7,博客部署流程,此博客项目部署完整流程,2022-06-06,http://49.234.15.210/static/web/articles/anime-girl-flowers-brown-hair-school-uniform-green-eyes-23561-thumb.jpeg,skill/deploy
+8,python发送邮件,将mysql数据表存入csv通过邮件发送,2022-06-09,http://49.234.15.210/static/web/articles/anime-landscape-anime-garden-sunshine-flowers-anime-1543-thumb.jpg,skill/mail
+9,python操作mysql,pandas读取csv内容插入mysql,2022-06-15,http://49.234.15.210/static/web/articles/anime-street-scenic-buildings-bicycle-cars-road-clouds-anime-6573-thumb.jpg,skill/1
+10,html,常见html,2022-07-03,http://49.234.15.210/static/web/articles/anime-girl-room-night-computer-summer-anime-406-thumb.jpg,skill/7
+11,css,css学习内容,2022-07-24,http://49.234.15.210/static/web/articles/anime-girl-kimono-katana-sakura-blossom-profile-view-traditional-building-anime-5694-thumb.jpg,skill/8
