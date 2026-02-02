@@ -1,0 +1,101 @@
+# ============================================
+# 通用忽略规则
+# ============================================
+.DS_Store
+Thumbs.db
+*.log
+*.pid
+*.seed
+*.pid.lock
+
+# 编辑器/IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# 环境变量
+.env
+.env.local
+.env.*.local
+
+# ============================================
+# Django 项目 (server/)
+# ============================================
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Django 特定
+server/*.log
+server/local_settings.py
+server/db.sqlite3
+server/media/
+server/staticfiles/
+
+# 虚拟环境
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# 测试和覆盖率
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
+
+# ============================================
+# Vue 项目 (interface/)
+# ============================================
+# 依赖
+interface/node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# 构建输出
+interface/dist/
+interface/dist-ssr/
+*.local
+
+# 缓存
+interface/.cache/
+interface/.temp/
+interface/.nuxt/
+
+# Vue CLI
+interface/.eslintcache
+
+# ============================================
+# Git
+# ============================================
+.git/
+# .gitignore
