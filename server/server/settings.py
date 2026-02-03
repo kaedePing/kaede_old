@@ -245,12 +245,13 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'others/document')  # others/document文件�
 constant = Constant()
 
 # 生成静态文件打开
-# STATIC_ROOT = os.path.join(BASE_DIR, "django-static")
+
 # 1.是否调试模式
 DEBUG = constant.settings_debug
 STATIC_URL = '/django-static/'
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "django-static"),  # 开放给客户端的静态资源目录
-    # os.path.join(BASE_DIR, "django-static"),  # 开放给客户端的静态资源目录
-    # os.path.join(BASE_DIR, 'others/static'),  # Vue项目打包生成的静态文件目录
-]
+if DEBUG:
+    STATICFILES_DIRS = [
+        os.path.join(BASE_DIR, "django-static"),  # 开放给客户端的静态资源目录
+    ]
+else:
+    STATIC_ROOT = os.path.join(BASE_DIR, "django-static")
