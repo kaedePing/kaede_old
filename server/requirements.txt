@@ -19,7 +19,6 @@ Jinja2==3.0.3
 MarkupSafe==2.0.1
 mysqlclient==2.1.0
 numpy==1.22.4
-packaging @ file:///C:/miniconda3/conda-bld/packaging_1761049101700/work
 pandas==1.4.2
 PyMySQL==1.0.2
 pypng==0.0.21
