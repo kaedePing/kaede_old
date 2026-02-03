@@ -23,13 +23,13 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('docs/', include_docs_urls(title='Api Document')),
 
-    path('', include('account.urls')),
-    path('', include('article.urls')),
-    path('', include('document.urls')),
-    path('', include('book.urls')),
-    path('', include('summary.urls')),
-    path('', include('api.urls')),
-    path('', include('interface.urls')),
+    path('api/', include('account.urls')),
+    path('api/', include('article.urls')),
+    path('api/', include('document.urls')),
+    path('api/', include('book.urls')),
+    path('api/', include('summary.urls')),
+    path('api/', include('api.urls')),
+    path('api/', include('interface.urls')),
 
     # path('', TemplateView.as_view(template_name='index.html'))  # 访问Vue项目
 ]
