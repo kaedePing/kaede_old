@@ -248,19 +248,9 @@ constant = Constant()
 # STATIC_ROOT = os.path.join(BASE_DIR, "django-static")
 # 1.是否调试模式
 DEBUG = constant.settings_debug
-if DEBUG is True:
-    # 调试模式
-    STATIC_URL = '/django-static/'  # STATIC_URL 修改为任意其他值,与Vue项目的 vue.config.js的assetsDir相同
-    STATICFILES_DIRS = [
-        # os.path.join(BASE_DIR, "others/static"),  # Django接口自带的静态文件路径
-        os.path.join(BASE_DIR, "django-static/web"),  # 开放给客户端的静态资源目录
-        # os.path.join(BASE_DIR, 'others/static'),  # Vue项目打包生成的静态文件目录
-    ]
-else:
-    # 非调试模式
-    STATIC_URL = '/django-static/'
-    STATICFILES_DIRS = [
-        os.path.join(BASE_DIR, "django-static"),  # 开放给客户端的静态资源目录
-        os.path.join(BASE_DIR, "django-static/web"),  # 开放给客户端的静态资源目录
-        # os.path.join(BASE_DIR, 'others/static'),  # Vue项目打包生成的静态文件目录
-    ]
+STATIC_URL = '/django-static/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "django-static"),  # 开放给客户端的静态资源目录
+    # os.path.join(BASE_DIR, "django-static"),  # 开放给客户端的静态资源目录
+    # os.path.join(BASE_DIR, 'others/static'),  # Vue项目打包生成的静态文件目录
+]
