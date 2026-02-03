@@ -259,3 +259,8 @@ if DEBUG is True:
 else:
     # 非调试模式
     STATIC_URL = '/django-static/'
+    STATICFILES_DIRS = [
+        os.path.join(BASE_DIR, "django-static"),  # 开放给客户端的静态资源目录
+        os.path.join(BASE_DIR, "django-static/web"),  # 开放给客户端的静态资源目录
+        # os.path.join(BASE_DIR, 'others/static'),  # Vue项目打包生成的静态文件目录
+    ]
