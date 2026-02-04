@@ -1,5 +1,7 @@
 from rest_framework.serializers import ModelSerializer
-from interface.models import MusicKuGou, RequestInfo
+
+from custom import Constant
+from interface.models import MusicKuGou, RequestInfo, MusicPlayer
 import time
 from rest_framework import serializers
 
@@ -27,3 +29,20 @@ class RequestInfoSerializers(ModelSerializer):
     def validate(self, attrs):
         attrs['dateCreatedStr'] = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime())
         return attrs
+
+
+class MusicPlayerSerializers(ModelSerializer):
+    class Meta:
+        model = MusicPlayer  # 指定需要校验的模型
+        fields = '__all__'  # 校验所有字段
+
+    def validate(self, attrs):
+        return attrs
+
+    # 前端音乐播放接口根据业务逻辑需要区分服务器进行拼接地址
+    def to_representation(self, instance):
+        representation = super().to_representation(instance)
+
+        if representation.get('url'):
+            representation['url'] = 'http://' + Constant.host + '/' + representation['url']
+        return representation

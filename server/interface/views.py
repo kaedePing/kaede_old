@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from rest_framework.response import Response
-from interface.models import MusicKuGou, RequestInfo
-from interface.serializers import MusicKuGouSerializers, RequestInfoSerializers
+from interface.models import MusicKuGou, RequestInfo, MusicPlayer
+from interface.serializers import MusicKuGouSerializers, RequestInfoSerializers, MusicPlayerSerializers
 from others.parent import standard_views, original_views  # 引入自己编写的view父类
 from rest_framework.permissions import IsAuthenticated, AllowAny
 
@@ -30,6 +30,14 @@ class RequestInfoOriginalListView(original_views.ListView):
 class RequestInfoOriginalDetailView(original_views.DetailView):
     def __init__(self):
         super().__init__(RequestInfo.objects.all(), RequestInfoSerializers, IsAuthenticated)
+
+
+# 前端播放接口，只需要一个原始的数据访问
+class MusicPlayerOriginalListView(original_views.ListView):
+    def __init__(self):
+        super().__init__(MusicPlayer.objects.all(), MusicPlayerSerializers,
+                         ['id'],
+                         ['id'])
 
 
 # Standard

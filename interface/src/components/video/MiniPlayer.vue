@@ -1,6 +1,17 @@
 <template>
   <div class="music">
-    <aplayer :music="videoUpload.list[0]" :list="videoUpload.list" :showlrc="true"></aplayer>
+    <!--    <aplayer :music="videoUpload.list[0]" :list="videoUpload.list" :showlrc="true"></aplayer>-->
+
+    <aplayer v-if="listLoaded"
+             :theme="videoUpload.theme"
+             :autoplay="videoUpload.autoplay"
+             :repeat="videoUpload.repeat"
+             :float="videoUpload.float"
+             :music="videoUpload.currentMusic"
+             :list="videoUpload.list">
+    </aplayer>
+    <div v-else>加载中...</div>
+
   </div>
 </template>
 
@@ -10,108 +21,51 @@ import common from "@/components/common/common";
 
 export default {
   name: "ComponentsVideoMusic",
+  components: {
+    aplayer
+  },
   data() {
     return {
+      url: common.httpUrl + '/original/music/player', // 播放列表默认接口
       videoUpload: {
-        //progress: false,
-        // progressPercent: 0,
-        // successPercent: 0,
         theme: '#ffc0cb',
         autoplay: true,
         repeat: 'repeat-one', // 轮播模式。值可以是 'repeat-one'（单曲循环）'repeat-all'（列表循环）或者 'no-repeat'（不循环）。为了好记，还可以使用对应的 'music' 'list' 'none'
-        mini: true, // 迷你模式
         float: true, // 浮动模式。你可以在页面上随意拖放你的播放器
-        music: { // 当前播放的音乐
-          title: '能够成家吗',
-          author: '咖啡少年',
-          url: common.httpUrl + '/static/web/video/Akie秋绘,夏璃夜 - アスノヨゾラ哨戒班。明日的夜空哨戒班（Cover IA）.mp3',
-          pic: 'https://dss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2366432289,1795558543&fm=26&gp=0.jpg' // 封面图片,
-        },
-        list: [
-          {
-            title: '星と君が消えた日',
-            author: '泠鸢yousa',
-            url: common.httpUrl + '/static/web/video/2.mp3',
-            pic: 'https://dss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2366432289,1795558543&fm=26&gp=0.jpg', // 封面图片,
-            lrc: '[00:00.000] 作词 : 夏轶瀚Sya ' +
-                '[00:01.000] 作曲 : 蔡近翰Zoe ' +
-                '[00:05.850]编曲:郑宇界JODODO ' +
-                '[00:09.850]Music by HOYO-MiX ' +
-                '[00:13.850]鋼(はがね)の織(お)り蒼(あお)い瞳(ひとみ) ' +
-                '[00:19.000]腐(くさ)った世界(せかい)に生(う)まれた ' +
-                '[00:24.720]冷(ひ)えた心(こころ)灰色(はいいろ)の空(そら) ' +
-                '[00:29.020]なのに君(きみ)と会(あ)った ' +
-                '[00:35.560]銀色(ぎんいろ)の髪(かみ)赤(あか)に染(そ)まった ' +
-                '[00:40.910]優(やさ)しくて抱(いだ)かれて ' +
-                '[00:46.450]君(きみ)を守(まも)るための命(いのち) ' +
-                '[00:50.870]なのに亡(な)くなった ' +
-                '[00:55.900]光(ひかり)が強(つよ)すぎから ' +
-                '[01:01.370]忘(わす)れてこの星(ほし)と君(きみ)を ' +
-                '[01:06.940]答(こた)えて声(こえ)を枯(か)らして ' +
-                '[01:12.810]感情(かんじょう)さえ消(き)えた僕(ぼく)に ' +
-                '[01:24.330]うんとして雨(あめ)空(そら)が撫(な)でる ' +
-                '[01:30.000]空虚(くうきょ)の大地(だいち)切(き)り裂(さ)く ' +
-                '[01:35.390]無数(むすう)の星(ほし)が血(ち)洗(あら)ったような ' +
-                '[01:39.880]君(きみ)が消(き)えた日(ひ) ' +
-                '[01:44.910]光(ひかり)が強(つよ)すぎから ' +
-                '[01:50.450]忘(わす)れてこの星(ほし)と君(きみ)を ' +
-                '[01:55.890]答(こた)えて声(こえ)を枯(か)らして ' +
-                '[02:01.900]感情(かんじょう)さえ消(き)えた僕(ぼく)に ' +
-                '[02:17.710]忘(わす)れて僕(ぼく)のことを ' +
-                '[02:23.070]聞(き)こえてこの星(ほし)と君(きみを) ' +
-                '[02:28.760]答(こた)えて声(こえ)を枯(か)らして ' +
-                '[02:34.920]感情(かんじょう)さえ消(き)えた僕(ぼく)に ' +
-                '[02:39.810]答(こた)えてoh ' +
-                '[02:44.980]探(さが)してwow ' +
-                '[02:50.030]抱(いだ)かれて力(ちから)尽(つ)くして ' +
-                '[02:56.880]すべてを飲(の)み込(こ)む光(ひかり)に ' +
-                '[03:02.310]感情(かんじょう)さえ消(き)えた僕(ぼく)を '
-          },
-          {
-            title: '我叫长安，你叫故里',
-            author: '尹昔眠,小田音乐社',
-            url: common.httpUrl + '/static/web/video/3.mp3',
-            pic: 'https://dss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2366432289,1795558543&fm=26&gp=0.jpg', // 封面图片,
-            lrc: '[00:00.000] 作词 : 孙英男/欧阳尚尚\n' +
-                '[00:01.000] 作曲 : 苏梦晗\n' +
-                '[00:02.000] 编曲 : 陈元博\n' +
-                '[00:03.000] 制作人 : 爱写歌的小田\n' +
-                '[00:25.57]城中下了一场微微细雨\n' +
-                '[00:34.35]不知会淋湿了谁的记忆\n' +
-                '[00:40.39]听微风多情吹起了涟漪\n' +
-                '[00:45.73]多少才子佳人宿命成谜\n' +
-                '[00:52.44]留一抹嫣红将誓言轻许\n' +
-                '[00:58.32]呢喃细语惹人辗转思绪\n' +
-                '[01:04.28]可愿煮酒往昔回忆缘起\n' +
-                '[01:09.63]点灯回眸百媚皆不如你\n' +
-                '[01:15.87]我叫长安 你叫故里\n' +
-                '[01:18.66]世人笑说长安归故里\n' +
-                '[01:21.76]我痴痴等你挽袖落笔\n' +
-                '[01:24.73]画一幅你我方寸之地\n' +
-                '[01:27.64]我叫长安 你叫故里\n' +
-                '[01:30.61]可惜长安尽头无故里\n' +
-                '[01:33.67]已等不到年少到古稀\n' +
-                '[01:52.41]留一抹嫣红将誓言轻许\n' +
-                '[01:58.28]呢喃细语惹人辗转思绪\n' +
-                '[02:04.36]可愿煮酒往昔回忆缘起',
-          },
-          {
-            title: 'アスノヨゾラ哨戒班。明日的夜空哨戒班（Cover IA）',
-            author: 'Akie秋绘,夏璃夜',
-            url: common.httpUrl + '/static/web/video/1.mp3',
-            pic: 'https://dss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2366432289,1795558543&fm=26&gp=0.jpg', // 封面图片,
-          },
-        ]
-
-
-      }
+        currentMusic: {},
+        list: [],
+      },
+      listLoaded: false,
     }
   },
 
-  components:
-      {
-        aplayer
-      }
+  created() {
+    this.init_param(this.url)
+  },
+
+  methods: {
+    init_param: function (url) {
+      // Articles组件初始化函数
+      let _this = this
+
+      _this.$http.get(url).then(function (res) {
+        _this.videoUpload.list = res['data']  // 此次请求的结果
+        if (_this.videoUpload.list.length > 0) {
+          _this.videoUpload.currentMusic = _this.videoUpload.list[0]
+        }
+        _this.videoUpload.autoplay = true
+        _this.listLoaded = true
+      }).catch(function (error) {
+        console.log(error)
+
+      })
+
+    },
+  },
+  // mounted: function () {
+  //   let _this = this
+  //   _this.init_param(_this.url)
+  // }
 
 }
 </script>

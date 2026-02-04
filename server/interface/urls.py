@@ -7,6 +7,7 @@ urlpatterns = [
     url(r'^original/music/v1s/(?P<pk>\d+)$', views.MusicKuGouOriginalDetailView.as_view()),
     url(r'^original/request/infos$', views.RequestInfoOriginalListView.as_view()),
     url(r'^original/request/infos/(?P<pk>\d+)$', views.RequestInfoOriginalDetailView.as_view()),
+    url(r'^original/music/player$', views.MusicPlayerOriginalListView.as_view()),  # 前端的音乐播放接口
 
     # Standard
     url(r'^standard/music/v1s$', views.MusicKuGouStandardListView.as_view()),

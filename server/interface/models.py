@@ -11,6 +11,7 @@ class MusicKuGou(models.Model):
     format_singer = models.CharField(verbose_name='格式化后的歌手', max_length=50, default='aaa')  # 格式化后的歌手
     name = models.CharField(verbose_name='歌曲完整信息', max_length=100, default='aaa')  # 歌曲完整信息
     playLink = models.URLField(verbose_name='播放地址', max_length=100,
+
                                default='http://49.234.15.210/static/web/articles/cover.jpg')  # 播放地址
     downloadUrl = models.URLField(verbose_name='下载地址', max_length=100,
                                   default='http://49.234.15.210/static/web/articles/cover.jpg')  # 下载地址
@@ -21,7 +22,7 @@ class MusicKuGou(models.Model):
                                       default='2023-02-27 00:00:00')  # 创建日期(年月日时分秒)
 
     class Meta:
-        db_table = 'app_music_v1s'  # 酷狗music
+        db_table = 'app_interface_music_v1s'  # 酷狗music
 
 
 class RequestInfo(models.Model):
@@ -43,4 +44,17 @@ class RequestInfo(models.Model):
                                       default='2023-02-27 00:00:00')  # 创建日期(年月日时分秒)
 
     class Meta:
-        db_table = 'app_request_infos'  # 请求的其他信息
+        db_table = 'app_interface_request_infos'  # 请求的其他信息
+
+
+# 这个model是针对前端需要播放音乐的
+class MusicPlayer(models.Model):
+    title = models.CharField(verbose_name='标题', max_length=50)
+    author = models.CharField(verbose_name='作者', max_length=50)
+    url = models.CharField(verbose_name='播放地址', max_length=50)
+    pic = models.CharField(verbose_name='封面图片', max_length=200)
+    lrc = models.TextField(verbose_name='歌词')
+    dateCreated = models.DateTimeField(verbose_name='上传日期', auto_now_add=True)  # 创建日期
+
+    class Meta:
+        db_table = 'app_interface_music_player'  # 酷狗music
