@@ -12,5 +12,5 @@ import os
 
 
 class Constant:
-    host = '49.234.15.210'  # ip地址
+    host = '127.0.0.1:8000' if (os.name == 'nt') else '43.143.30.186'  # ip地址
     settings_debug = True if (os.name == 'nt') else False  # django的settings文件中是否调试模式
