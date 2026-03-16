@@ -12,3 +12,4 @@ class Article(models.Model):
 
     class Meta:
         db_table = 'app_articles'
+        verbose_name='文章'

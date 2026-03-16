@@ -43,7 +43,7 @@ export default {
     },
 // 上传文件
     onUpload(formData) {
-      let url = common.httpUrl + '/documents'  // 接收文件的地址  common.httpUrl
+      let url = common.httpUrl + '/standard/documents'  // 接收文件的地址  common.httpUrl
       let _this = this
       _this.$http.post(url, formData, {
         headers: {

@@ -52,7 +52,7 @@ export default {
   name: "ComponentsOthersFiles",
   data() {
     return {
-      url: common.httpUrl + 'original/documents',
+      url: common.httpUrl + '/original/documents',
       files: []
     }
   },
